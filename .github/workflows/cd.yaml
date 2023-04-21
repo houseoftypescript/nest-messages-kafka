@@ -7,14 +7,7 @@ on:
 
 jobs:
   cd:
-    strategy:
-      matrix:
-        project:
-          - name: APIs
-            working-directory: ./services/apis
-          - name: GraphQL
-            working-directory: ./services/graphql
-    name: CD - ${{ matrix.project.name }}
+    name: CD
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

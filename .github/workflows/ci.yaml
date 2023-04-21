@@ -3,7 +3,6 @@ name: CI
 on:
   push:
     branches:
-      - master
       - develop
       - hotfix/**
       - feature/**
@@ -11,14 +10,7 @@ on:
 
 jobs:
   ci:
-    strategy:
-      matrix:
-        project:
-          - name: APIs
-            working-directory: ./services/apis
-          - name: GraphQL
-            working-directory: ./services/graphql
-    name: CI - ${{ matrix.project.name }}
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
